@@ -59,3 +59,26 @@ docker compose up --build
 - GitHub Container Registry
 - k3d / k3s
 - Kubernetes
+
+## Local Docker Compose Test
+
+Start all services:
+
+docker compose up --build
+
+Test api-gateway:
+
+curl http://localhost:5000/health
+curl http://localhost:5000/version
+
+Test calculator-service:
+
+curl http://localhost:5001/health
+curl "http://localhost:5001/add?a=1&b=2"
+curl "http://localhost:5001/multiply?a=3&b=4"
+
+Test message-service:
+
+curl http://localhost:5002/health
+curl http://localhost:5002/version
+curl http://localhost:5002/message
